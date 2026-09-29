@@ -1,0 +1,168 @@
+<!doctype html>
+<html lang="pt-BR">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <title>IA Atlas — O que é, como funciona e como usar Inteligência Artificial</title>
+  <meta name="description" content="Uma experiência visual e interativa para entender Inteligência Artificial: fundamentos, Machine Learning, LLMs, Transformers, RAG, agentes, segurança, educação e o papel da IA no EstudHub.">
+  <meta name="author" content="Mateus Vidotto">
+  <meta name="theme-color" content="#080b16">
+  <link rel="icon" href="assets/favicon.svg" type="image/svg+xml">
+  <meta property="og:title" content="IA Atlas — Inteligência Artificial por dentro">
+  <meta property="og:description" content="Entenda IA do conceito aos Transformers, RAG e uso responsável — com um estudo especial sobre o EstudHub.">
+  <meta property="og:type" content="website">
+  <link rel="stylesheet" href="style.css">
+  <script src="content.js" defer></script>
+  <script src="script.js" defer></script>
+</head>
+<body>
+  <a class="skip-link" href="#explorer">Pular para o conteúdo</a>
+  <div class="bg-grid" aria-hidden="true"></div>
+  <div class="noise" aria-hidden="true"></div>
+
+  <header class="topbar" id="top">
+    <div class="wrap topbar-inner">
+      <a class="logo" href="#top" aria-label="IA Atlas — início">
+        <span class="logo-orbit" aria-hidden="true"><i></i><b></b><em></em></span>
+        <span><strong>IA<span>Atlas</span></strong><small>Inteligência Artificial por dentro</small></span>
+      </a>
+      <nav class="nav" aria-label="Navegação principal">
+        <a href="#explorer">Explorar</a>
+        <a href="#estudhub">EstudHub</a>
+        <a href="#glossario">Glossário</a>
+        <a href="#fontes">Fontes</a>
+      </nav>
+      <button class="nav-menu" id="navMenu" aria-label="Abrir menu" aria-expanded="false"><span></span><span></span><span></span></button>
+    </div>
+  </header>
+
+  <main>
+    <section class="hero">
+      <div class="wrap hero-grid">
+        <div class="hero-copy">
+          <div class="eyebrow"><span class="eyebrow-dot"></span> GUIA INTERATIVO • 2026</div>
+          <h1>Inteligência Artificial.<br><span>Abra a caixa-preta.</span></h1>
+          <p class="hero-lead">De regras e dados a redes neurais, tokens, Transformers, RAG, agentes e uso responsável. Um mapa técnico para entender <em>o que acontece por trás da tela</em>.</p>
+          <div class="hero-actions">
+            <a class="btn primary" href="#explorer">Começar a explorar <b>→</b></a>
+            <a class="btn secondary" href="#estudhub">Ver o EstudHub</a>
+          </div>
+          <div class="hero-metrics">
+            <div><strong id="metricChapters">91</strong><span>tópicos</span></div>
+            <div><strong>08</strong><span>trilhas</span></div>
+            <div><strong>03</strong><span>camadas</span></div>
+          </div>
+        </div>
+
+        <div class="hero-machine" aria-label="Diagrama visual de um sistema de IA">
+          <div class="machine-halo"></div>
+          <div class="machine-core"><img src="assets/ai-symbol.svg" alt="Símbolo abstrato representando inteligência artificial"><span>MODEL</span></div>
+          <svg class="machine-lines" viewBox="0 0 620 620" aria-hidden="true">
+            <g class="orbit orbit-a"><ellipse cx="310" cy="310" rx="250" ry="105"/></g>
+            <g class="orbit orbit-b"><ellipse cx="310" cy="310" rx="250" ry="105" transform="rotate(60 310 310)"/></g>
+            <g class="orbit orbit-c"><ellipse cx="310" cy="310" rx="250" ry="105" transform="rotate(120 310 310)"/></g>
+            <g class="nodes"><circle cx="83" cy="310" r="7"/><circle cx="537" cy="310" r="7"/><circle cx="310" cy="59" r="7"/><circle cx="310" cy="561" r="7"/></g>
+          </svg>
+          <div class="machine-label label-data"><small>ENTRADA</small><b>dados</b></div>
+          <div class="machine-label label-model"><small>NÚCLEO</small><b>padrões</b></div>
+          <div class="machine-label label-output"><small>SAÍDA</small><b>resposta</b></div>
+        </div>
+      </div>
+      <div class="hero-scroll" aria-hidden="true"><span></span> role para explorar</div>
+    </section>
+
+    <section class="manifesto wrap">
+      <div class="manifesto-card">
+        <span class="manifesto-mark">“</span>
+        <div><p class="overline">A ideia central</p><p class="manifesto-text">IA não é uma resposta pronta. É um conjunto de tecnologias capazes de aprender padrões, processar informações, gerar conteúdo e auxiliar pessoas — <strong>mas seus resultados continuam sujeitos a erros, limitações e riscos.</strong></p></div>
+      </div>
+    </section>
+
+    <section class="explorer wrap" id="explorer">
+      <div class="section-top">
+        <div><p class="overline">MAPA DO CONHECIMENTO</p><h2>Escolha uma trilha.</h2><p class="section-sub">Você pode navegar em ordem, pesquisar qualquer assunto ou abrir um tópico específico.</p></div>
+        <div class="view-controls"><button class="view-btn active" data-view="cards">Cartões</button><button class="view-btn" data-view="list">Lista</button></div>
+      </div>
+
+      <div class="explorer-layout">
+        <aside class="sidebar" aria-label="Filtros e trilhas">
+          <div class="side-search"><span aria-hidden="true">⌕</span><input id="search" type="search" placeholder="Pesquisar IA..." aria-label="Pesquisar no Atlas"><button id="clearSearch" aria-label="Limpar pesquisa">×</button></div>
+          <div class="side-section"><span class="side-title">TRILHAS</span><div id="trailNav"></div></div>
+          <div class="side-section mini"><span class="side-title">ATENÇÃO</span><p>Partes marcadas como <b>hipotéticas</b> descrevem propostas técnicas, não funcionalidades comprovadas do EstudHub.</p></div>
+        </aside>
+
+        <div class="knowledge-main">
+          <div class="active-trail" id="activeTrail"></div>
+          <div class="results" id="results" aria-live="polite"></div>
+          <div class="chapter-grid" id="chapterGrid"></div>
+          <div class="no-results" id="noResults" hidden><div class="empty-orb">⌕</div><h3>Nada encontrado</h3><p>Tente outra palavra ou volte para “Todas”.</p><button class="btn secondary" id="reset">Limpar busca</button></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="estudhub-section" id="estudhub">
+      <div class="wrap">
+        <div class="estudhub-head">
+          <div><p class="overline cyan">CASO DE ESTUDO</p><h2>IA no <span>EstudHub.</span></h2><p>Do problema ao protótipo: como ferramentas de IA foram descritas no material do projeto como copilotos de pesquisa, ideação, prototipagem e comunicação.</p></div>
+          <div class="hub-badge"><span>HUMANO</span><b>+</b><span>IA</span><i>→</i><strong>PRODUTO</strong></div>
+        </div>
+        <div class="timeline" id="estudTimeline"></div>
+        <div class="hub-principles">
+          <div><small>01</small><strong>Copiloto, não autor.</strong><p>A ferramenta gera possibilidades; a equipe analisa, escolhe, corrige e valida.</p></div>
+          <div><small>02</small><strong>Fato ≠ hipótese.</strong><p>Persona, notas de priorização e futuras funções precisam ser identificadas corretamente.</p></div>
+          <div><small>03</small><strong>O julgamento continua humano.</strong><p>A tecnologia acelera o processo sem transferir a responsabilidade da decisão.</p></div>
+        </div>
+      </div>
+    </section>
+
+    <section class="interactive-section wrap">
+      <div class="section-top"><div><p class="overline">LABORATÓRIO VISUAL</p><h2>Entenda em 20 segundos.</h2><p class="section-sub">Troque o modo de visualização para enxergar o mesmo conceito por diferentes ângulos.</p></div></div>
+      <div class="lab-grid">
+        <article class="lab-card"><div class="lab-head"><span>01</span><h3>De dados a previsão</h3></div><div class="lab-flow"><div>Dados</div><b>↓</b><div>Treinamento</div><b>↓</b><div>Modelo</div><b>↓</b><div>Nova entrada</div><b>↓</b><div class="accent">Previsão</div></div></article>
+        <article class="lab-card"><div class="lab-head"><span>02</span><h3>De prompt a resposta</h3></div><div class="lab-flow horizontal"><div>Prompt</div><b>→</b><div>Tokens</div><b>→</b><div>Transformer</div><b>→</b><div class="accent">Token</div><b>↻</b></div><p>O ciclo se repete para gerar a sequência final.</p></article>
+        <article class="lab-card wide"><div class="lab-head"><span>03</span><h3>O “humano no comando”</h3></div><div class="human-loop"><div class="human-node">DEFINE</div><div class="arrow">→</div><div class="ai-node">IA GERA</div><div class="arrow">→</div><div class="human-node">VALIDA</div><div class="arrow">→</div><div class="ai-node">IA REFINA</div><div class="arrow">→</div><div class="human-node">DECIDE</div></div></article>
+      </div>
+    </section>
+
+    <section class="glossary-section wrap" id="glossario">
+      <div class="section-top"><div><p class="overline">GLOSSÁRIO</p><h2>As palavras que destravam o assunto.</h2><p class="section-sub">Um dicionário rápido para não se perder entre siglas.</p></div></div>
+      <div class="glossary-grid" id="glossaryGrid"></div>
+    </section>
+
+    <section class="sources-section" id="fontes">
+      <div class="wrap">
+        <div class="section-top"><div><p class="overline">REFERÊNCIAS</p><h2>Fontes antes de opiniões.</h2><p class="section-sub">O conteúdo usa documentação técnica, fontes institucionais e o material fornecido sobre o EstudHub.</p></div></div>
+        <div class="source-grid">
+          <a href="https://csrc.nist.gov/glossary/term/artificial_intelligence" target="_blank" rel="noopener noreferrer"><b>NIST CSRC</b><span>Definição de Inteligência Artificial</span><i>↗</i></a>
+          <a href="https://www.nist.gov/publications/artificial-intelligence-risk-management-framework-generative-artificial-intelligence" target="_blank" rel="noopener noreferrer"><b>NIST</b><span>AI RMF — Generative AI Profile</span><i>↗</i></a>
+          <a href="https://developers.google.com/machine-learning/crash-course" target="_blank" rel="noopener noreferrer"><b>Google</b><span>Machine Learning Crash Course</span><i>↗</i></a>
+          <a href="https://arxiv.org/abs/1706.03762" target="_blank" rel="noopener noreferrer"><b>Vaswani et al.</b><span>Attention Is All You Need</span><i>↗</i></a>
+          <a href="https://www.unesco.org/en/articles/guidance-generative-ai-education-and-research" target="_blank" rel="noopener noreferrer"><b>UNESCO</b><span>IA generativa na educação e pesquisa</span><i>↗</i></a>
+          <a href="https://ai.google.dev/gemini-api/docs/prompting-strategies" target="_blank" rel="noopener noreferrer"><b>Google AI</b><span>Prompt design strategies</span><i>↗</i></a>
+          <a href="https://genai.owasp.org/llm-top-10/" target="_blank" rel="noopener noreferrer"><b>OWASP</b><span>Top 10 riscos para LLMs e GenAI</span><i>↗</i></a>
+          <a href="https://www.figma.com/pt-br/ai/" target="_blank" rel="noopener noreferrer"><b>Figma</b><span>Recursos de IA para design</span><i>↗</i></a>
+          <a href="https://www.canva.com/help/use-magic-design/" target="_blank" rel="noopener noreferrer"><b>Canva</b><span>Magic Design e IA</span><i>↗</i></a>
+        </div>
+        <div class="source-note"><strong>Sobre o EstudHub:</strong> afirmações sobre ferramentas usadas, persona, matriz e processo foram tratadas como documentação do material fornecido. Propostas futuras são explicitamente marcadas como hipotéticas.</div>
+      </div>
+    </section>
+  </main>
+
+  <footer class="footer">
+    <div class="wrap footer-grid">
+      <div><a class="logo" href="#top"><span class="logo-orbit small" aria-hidden="true"><i></i><b></b><em></em></span><span><strong>IA<span>Atlas</span></strong><small>Projeto educacional</small></span></a><p>Inteligência Artificial explicada do conceito ao sistema.</p></div>
+      <div><strong>Explorar</strong><a href="#explorer">Mapa</a><a href="#estudhub">EstudHub</a><a href="#glossario">Glossário</a></div>
+      <div><strong>Projeto</strong><a href="#fontes">Fontes</a><a href="#top">Voltar ao topo</a></div>
+      <div class="footer-last"><span>© 2026 Mateus Vidotto</span><span>Feito para aprender, testar e compartilhar.</span></div>
+    </div>
+  </footer>
+
+  <dialog class="topic-dialog" id="topicDialog">
+    <div class="dialog-shell">
+      <button class="dialog-close" id="dialogClose" aria-label="Fechar tópico">×</button>
+      <div id="dialogContent"></div>
+    </div>
+  </dialog>
+  <button class="to-top" id="toTop" aria-label="Voltar ao topo">↑</button>
+</body>
+</html>
